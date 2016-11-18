@@ -62,3 +62,11 @@ _Inputs:_<br>
 user (String) Required Description: Username requesting active games.<br>
 _Output:_<br>
 message (String) Description: Response message listing active games by game id.
+
+###*get_game*###
+_Description:_<br>
+Return the current state of a requested game.<br>
+_Inputs:_<br>
+urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
+_Output:_<br>
+message (String) Description: Response message listing current state of game.
