@@ -45,3 +45,12 @@ _Inputs:_<br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
 _Output:_<br>
 message (String) Description: Response message listing the game history of moves for that game.
+
+###*cancel_game*###
+_Description:_<br>
+Cancels active game the specified user is player.  If authorized the Game and GameHistory objects will be deleted from the datat store<br>
+_Inputs:_<br>
+urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
+user (String) Required Description: Username requesting to cancel game.<br>
+_Output:_<br>
+message (String) Description: Response message confirming game has been deleted.
