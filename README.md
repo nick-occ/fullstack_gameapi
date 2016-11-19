@@ -15,7 +15,6 @@ email (String) Required Description: Valid email address<br>
 _Output_:<br>
 message (String) Description: Response message confirming user was created.
 
-
 ###*new_game*###
 _Description:_<br>
 Creates a new TicTacToe game in data store Game.  This can be a one or two player game.  If no second player is assigned moves will be randomly generated on the second turn.<br>
@@ -24,7 +23,6 @@ user_name1 (String) Required Description: Valid user name from data store User.<
 user_name2 (String) Description: Valid user name from data store User.<br>
 _Output:_<br>
 message (String) Description: Response message confirming game was created.
-
 
 ###*get_user_rankings*###
 _Description:_<br>
@@ -70,3 +68,13 @@ _Inputs:_<br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
 _Output:_<br>
 message (String) Description: Response message listing current state of game.
+
+###*make_move*###
+_Description:_<br>
+Updates the Game grid with the position the player requests.  If the position is already occupied or it isn't the requested players turn the update to the grid will not take place and a message will notify the user that their move was unsuccessful.  If the move is successful the procedure will check if the user has won the game or if there are no more moves remaining the game will result in a draw.  Successful moves will also write results in the GameHistory and moves that end the game will record entries in the Score object in the data store.<br>
+_Inputs:_<br>
+urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
+player (String) Required Description: Player making move.<br>
+pos (Integer) Required Range: 0-8 Description: Position where user is making move.<br>
+_Output:_<br>
+message (String) Description: Response message listing if the move was successful.
