@@ -17,28 +17,27 @@ The Tic-Tac-Toe can be played in single or two player mode.  Player 1 starts out
 https://apis-explorer.appspot.com/apis-explorer/?base=https://gameapp-145818.appspot.com/_ah/api#p/tictactoe/v1/
 
 ##API Methods
-Path: 'game/{urlsafe_game_key}'
-Method: GET
-Parameters: urlsafe_game_key
-Returns: GameForm with current game state.
-Description: Returns the current state of a game.
 ###*create_user*
-_Description:_ <br>
-Function allows users to be created in the User data store for playing Tic-Tac-Toe.  Only requirement is that the user name "\<Computer>" is a reserved player for single player games.  A request to create that user name will trigger an exception.<br>
-_Inputs:_<br>
+<b>_Path:_</b> 'user' <br>
+<b>_Method:_</b> POST <br>
+<b>_Parameters:_</b><br>
 user_name (String) Required Description: Desired user_name you wish to have<br>
 email (String) Required Description: Valid email address<br>
-_Output_:<br>
-message (String) Description: Response message confirming user was created.
+<b>_Returns:_</b><br>
+message (String) Description: Response message confirming user was created.<br>
+<b>_Description:_</b> <br>
+Function allows users to be created in the User data store for playing Tic-Tac-Toe.  Only requirement is that the user name "\<Computer>" is a reserved player for single player games.  A request to create that user name will trigger an exception.<br>
 
 ###*new_game*
-_Description:_<br>
-Creates a new TicTacToe game in the Game data store.  This can be a one or two player game.  If no second player is assigned moves will be randomly generated on the second turn.<br>
-_Inputs:_<br>
+<b>_Path:_</b> 'game' <br>
+<b>_Method:_</b> POST <br>
+<b>_Parameters:_</b><br>
 user_name1 (String) Required Description: Valid user name from data store User.<br>
 user_name2 (String) Description: Valid user name from data store User.<br>
-_Output:_<br>
-message (String) Description: Response message confirming game was created.
+<b>_Returns:_</b><br>
+message (String) Description: Response message confirming game was created.</br>
+<b>_Description:_</b> <br>
+Creates a new TicTacToe game in the Game data store.  This can be a one or two player game.  If no second player is assigned moves will be randomly generated on the second turn.<br>
 
 ###*get_user_rankings*
 _Description:_<br>
