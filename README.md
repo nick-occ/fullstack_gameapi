@@ -8,6 +8,9 @@ the API.  The TicTacToe API can be played in either single or two player mode.
 Formula for scoring a game is:<br>
 wins + (draws * .5)\ (total games)
 
+##API URL##
+https://apis-explorer.appspot.com/apis-explorer/?base=https://gameapp-145818.appspot.com/_ah/api#p/tictactoe/v1/
+
 ##API Methods##
 
 ###*create_user*###
