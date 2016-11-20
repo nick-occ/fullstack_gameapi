@@ -80,7 +80,7 @@ Cancels active game the specified user is player.  If authorized the Game and Ga
 <b>_Parameters:_</b><br>
 user (String) Required Description: Username requesting active games.<br>
 <b>_Returns:_</b><br>
-message (String) Description: Response message listing active games by game id.<br>
+message (String) Description: Response message listing active games by game urlsafe key.<br>
 <b>_Description:_</b><br>
 Gets a list of all active games for the user provided.<br>
 
