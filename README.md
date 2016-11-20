@@ -40,56 +40,68 @@ message (String) Description: Response message confirming game was created.</br>
 Creates a new TicTacToe game in the Game data store.  This can be a one or two player game.  If no second player is assigned moves will be randomly generated on the second turn.<br>
 
 ###*get_user_rankings*
-_Description:_<br>
+<b>_Path:_</b> 'scores' <br>
+<b>_Method:_</b> GET <br>
+<b>_Parameters:_</b><br>
+num_results (Integer) Description: Number from 1:n will fetch the requested number of rankings.<br>
+If left blank function will return all the results.<br>
+<b>_Returns:_</b><br>
+message (String) Description: Response message listing the user rankings showing the user name,<br>
+win percentage, and the number of moves.<br>
+<b>_Description:_</b><br>
 Returns a list of user ranked by the user with the highest winning percentage calculated by:<br>
 wins + (draws * .5)\ (total games).  In the event of a tie the user with the least amount<br>
 of total moves will be used as a tiebreaker.<br>
-_Inputs:_<br>
-num_results (Integer) Description: Number from 1:n will fetch the requested number of rankings.<br>
-If left blank function will return all the results.<br>
-_Output:_<br>
-message (String) Description: Response message listing the user rankings showing the user name,<br>
-win percentage, and the number of moves.
 
 ###*get_game_history*
-_Description:_<br>
-Returns a list of moves made during a user provided game.  The output is the user, position, if game is a draw and if game is over.<br>
-_Inputs:_<br>
+<b>_Path:_</b> 'history' <br>
+<b>_Method:_</b> GET <br>
+<b>_Parameters:_</b><br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
-_Output:_<br>
-message (String) Description: Response message listing the game history of moves for that game.
+<b>_Returns:_</b><br>
+message (String) Description: Response message listing the game history of moves for that game.<br>
+<b>_Description:_</b><br>
+Returns a list of moves made during a user provided game.  The output is the user, position, if game is a draw and if game is over.<br>
 
 ###*cancel_game*
-_Description:_<br>
-Cancels active game the specified user is player.  If authorized the Game and GameHistory objects will be deleted from the data  store<br>
-_Inputs:_<br>
+<b>_Path:_</b> 'game/{urlsafe_game_key}/cancel' <br>
+<b>_Method:_</b> DELETE <br>
+<b>_Parameters:_</b><br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
 user (String) Required Description: Username requesting to cancel game.<br>
-_Output:_<br>
-message (String) Description: Response message confirming game has been deleted.
+<b>_Returns:_</b><br>
+message (String) Description: Response message confirming game has been deleted.<br>
+<b>_Description:_</b><br>
+Cancels active game the specified user is player.  If authorized the Game and GameHistory objects will be deleted from the data  store<br>
 
 ###*get_user_games*
-_Description:_<br>
-Gets a list of all active games for the user provided.<br>
-_Inputs:_<br>
+<b>_Path:_</b> 'games/{user}' <br>
+<b>_Method:_</b> GET <br>
+<b>_Parameters:_</b><br>
 user (String) Required Description: Username requesting active games.<br>
-_Output:_<br>
-message (String) Description: Response message listing active games by game id.
+<b>_Returns:_</b><br>
+message (String) Description: Response message listing active games by game id.<br>
+<b>_Description:_</b><br>
+Gets a list of all active games for the user provided.<br>
 
 ###*get_game*
-_Description:_<br>
-Return the current state of a requested game.<br>
-_Inputs:_<br>
+<b>_Path:_</b> 'game/{urlsafe_game_key}' <br>
+<b>_Method:_</b> GET <br>
+<b>_Parameters:_</b><br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
-_Output:_<br>
-message (String) Description: Response message listing current state of game.
+<b>_Returns:_</b><br>
+message (String) Description: Response message listing current state of game.<br>
+<b>_Description:_</b><br>
+Return the current state of a requested game.<br>
 
 ###*make_move*
-_Description:_<br>
-Updates the Game grid with the position the player requests.  If the position is already occupied or it isn't the requested players turn the update to the grid will not take place and a message will notify the user that their move was unsuccessful.  If the Game is a single player game the computer will make a randomly generated move after the user makes their move and the game hasn't ended.   If the move is successful the procedure will check if the user has won the game or if there are no more moves remaining the game will result in a draw.  Successful moves will also write results in the GameHistory and moves that end the game will record entries in the Score object in the data store.<br>
-_Inputs:_<br>
+<b>_Path:_</b> 'game/{urlsafe_game_key}' <br>
+<b>_Method:_</b> PUT <br>
+<b>_Parameters:_</b><br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
 player (String) Required Description: Player making move.<br>
 pos (Integer) Required Range: 0-8 Description: Position where user is making move.<br>
-_Output:_<br>
-message (String) Description: Response message listing if the move was successful.
+<b>_Returns:_</b><br>
+message (String) Description: Response message listing if the move was successful.<br>
+<b>_Description:_</b><br>
+Updates the Game grid with the position the player requests.  If the position is already occupied or it isn't the requested players turn the update to the grid will not take place and a message will notify the user that their move was unsuccessful.  If the Game is a single player game the computer will make a randomly generated move after the user makes their move and the game hasn't ended.   If the move is successful the procedure will check if the user has won the game or if there are no more moves remaining the game will result in a draw.  Successful moves will also write results in the GameHistory and moves that end the game will record entries in the Score object in the data store.<br>
