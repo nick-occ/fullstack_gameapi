@@ -71,7 +71,7 @@ message (String) Description: Response message listing current state of game.
 
 ###*make_move*###
 _Description:_<br>
-Updates the Game grid with the position the player requests.  If the position is already occupied or it isn't the requested players turn the update to the grid will not take place and a message will notify the user that their move was unsuccessful.  If the move is successful the procedure will check if the user has won the game or if there are no more moves remaining the game will result in a draw.  Successful moves will also write results in the GameHistory and moves that end the game will record entries in the Score object in the data store.<br>
+Updates the Game grid with the position the player requests.  If the position is already occupied or it isn't the requested players turn the update to the grid will not take place and a message will notify the user that their move was unsuccessful.  If the Game is a single player game the computer will make a randomly generated move after the user makes their move and the game hasn't ended.   If the move is successful the procedure will check if the user has won the game or if there are no more moves remaining the game will result in a draw.  Successful moves will also write results in the GameHistory and moves that end the game will record entries in the Score object in the data store.<br>
 _Inputs:_<br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
 player (String) Required Description: Player making move.<br>
