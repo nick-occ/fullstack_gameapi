@@ -4,6 +4,10 @@
 This API will allow developers to develop a front-end TicTacToe application by accessing functions created within
 the API.  The TicTacToe API can be played in either single or two player mode.
 
+##Scoring##
+Formula for scoring a game is:<br>
+wins + (draws * .5)\ (total games)
+
 ##API Methods##
 
 ###*create_user*###
