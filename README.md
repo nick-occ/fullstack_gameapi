@@ -8,6 +8,11 @@ the API.  The TicTacToe API can be played in either single or two player mode.
 Formula for scoring a game is:<br>
 wins + (draws * .5)\ (total games)
 
+As a tie break when ranking all the users the game also captures the number of moves it took the winner to make a move for each game and keeps a running total in the Score object.  In the event of a tie winning percentage, the user with the least amount of moves will be ranked higher.
+
+##Rules of the Game##
+The Tic-Tac-Toe can be played in single or two player mode.  Player 1 starts out by making the first move in a 3x3 grid.  Once the move is made no future moves can be made in the same location.  Player 2 will then make a move in the Tic-Tac-Toe grid in a position that has not already been filled by a previous move.  The game will continue until either there are no more free spaces to make a move or one of the players has three consecutive areas filled matching either horizontally, vertically or diagonally.
+
 ##API URL##
 https://apis-explorer.appspot.com/apis-explorer/?base=https://gameapp-145818.appspot.com/_ah/api#p/tictactoe/v1/
 
