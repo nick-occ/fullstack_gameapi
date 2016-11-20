@@ -8,7 +8,7 @@ the API.  The TicTacToe API can be played in either single or two player mode.
 
 ###*create_user*###
 _Description:_ <br>
-Function allows user to be created in games data store User.<br>
+Function allows users to be created in the User data store for playing Tic-Tac-Toe.  Only requirement is that the user name "\<Computer>" is a reserved player for single player games.  A request to create that user name will trigger an exception.<br>
 _Inputs:_<br>
 user_name (String) Required Description: Desired user_name you wish to have<br>
 email (String) Required Description: Valid email address<br>
@@ -17,7 +17,7 @@ message (String) Description: Response message confirming user was created.
 
 ###*new_game*###
 _Description:_<br>
-Creates a new TicTacToe game in data store Game.  This can be a one or two player game.  If no second player is assigned moves will be randomly generated on the second turn.<br>
+Creates a new TicTacToe game in the Game data store.  This can be a one or two player game.  If no second player is assigned moves will be randomly generated on the second turn.<br>
 _Inputs:_<br>
 user_name1 (String) Required Description: Valid user name from data store User.<br>
 user_name2 (String) Description: Valid user name from data store User.<br>
