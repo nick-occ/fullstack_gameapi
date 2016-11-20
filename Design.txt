@@ -1,0 +1,5 @@
+What additional properties did you add to your models and why?
+To the Game model I added a function to make a move on the Tic-Tac-Toe grid.  With making a move also comes additional steps such as checking if the move results in a win, if so updating the score for each players total score and if no moves remain issuing a draw.  Also the game is designed to work with one or two players.  I added logic so that when only one user was provided when creating the game a random move will be auto generated after the user makes their move.  Extra logic had to run when game was in single vs. two player mode.
+
+What were some of the trade-offs or struggles you faced when implementing the new game logic?
+With the Tic-Tac-Toe grid I decided to make the grid a standard list rather than a multi dimensional array.  It was easier to add values during each move to a single list than using a numpy array within the Google Cloud Platform API.
