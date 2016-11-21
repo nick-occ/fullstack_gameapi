@@ -65,7 +65,7 @@ Returns a list of moves made during a user provided game.  The output is the use
 
 ###*cancel_game*
 <b>_Path:_</b> 'game/{urlsafe_game_key}/cancel' <br>
-<b>_Method:_</b> DELETE <br>
+<b>_Method:_</b> POST <br>
 <b>_Parameters:_</b><br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
 user (String) Required Description: Username requesting to cancel game.<br>
@@ -96,7 +96,7 @@ Return the current state of a requested game.<br>
 
 ###*make_move*
 <b>_Path:_</b> 'game/{urlsafe_game_key}' <br>
-<b>_Method:_</b> PUT <br>
+<b>_Method:_</b> POST <br>
 <b>_Parameters:_</b><br>
 urlsafe_game_key (String) Required Description: URL Safe Game Key of Game object in data store.<br>
 player (String) Required Description: Player making move.<br>
